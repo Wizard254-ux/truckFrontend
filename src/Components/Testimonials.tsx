@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function TestimonialsSection() {
   const [selectedTestimonial, setSelectedTestimonial] = useState(0);
@@ -35,116 +36,208 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <div className=" bg-gray-50 pt-0 px-4 relative py-16 md:py-24">
-        
+    <motion.div 
+      className="bg-gray-50 pt-0 px-4 relative py-16 md:py-24"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="max-w-6xl mx-auto relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center md:mb-9">
           {/* Left Side */}
-          <div>
-            <p className="text-gray-500 text-sm font-medium tracking-wide uppercase mb-4">
-              TESTIMONIALS
-            </p>
-           <h2
-            className="md:text-[50px] text-[28px] font-bold text-gray-900 leading-[100%] tracking-normal mb-8"
-            style={{ fontFamily: 'Volkhov, serif' }}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <motion.p 
+              className="text-gray-500 text-sm font-medium tracking-wide uppercase mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
             >
-            What People Say About Us.
-            </h2>
+              TESTIMONIALS
+            </motion.p>
+            <motion.h2
+              className="md:text-[50px] text-[28px] font-bold text-gray-900 leading-[100%] tracking-normal mb-8"
+              style={{ fontFamily: 'Volkhov, serif' }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              What People Say About Us.
+            </motion.h2>
 
-            
             {/* Dots Navigation */}
-            <div className="flex space-x-3">
+            <motion.div 
+              className="flex space-x-3"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
               {testimonials.map((_, index) => (
-                <button
+                <motion.button
                   key={index}
                   onClick={() => setSelectedTestimonial(index)}
                   className={`w-3 h-3 rounded-full transition-colors ${
                     selectedTestimonial === index ? 'bg-gray-800' : 'bg-gray-300'
                   }`}
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 />
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Side */}
-          <div className="relative">
+          <motion.div 
+            className="relative"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             {/* Main Testimonial Card */}
-            <div className="bg-white rounded-lg shadow-lg p-8 relative z-10">
+            <motion.div 
+              className="bg-white rounded-lg shadow-lg p-8 relative z-10"
+              whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            >
               <div className="flex items-start space-x-4 mb-6">
-                <img
-                  src={testimonials[selectedTestimonial].avatar}
-                  alt={testimonials[selectedTestimonial].name}
-                  className="w-16 h-16 rounded-full object-cover"
-                />
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={selectedTestimonial}
+                    src={testimonials[selectedTestimonial].avatar}
+                    alt={testimonials[selectedTestimonial].name}
+                    className="w-16 h-16 rounded-full object-cover"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </AnimatePresence>
                 <div>
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    "{testimonials[selectedTestimonial].text}"
-                  </p>
+                  <AnimatePresence mode="wait">
+                    <motion.p 
+                      key={selectedTestimonial}
+                      className="text-gray-700 leading-relaxed mb-4"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.4 }}
+                    >
+                      "{testimonials[selectedTestimonial].text}"
+                    </motion.p>
+                  </AnimatePresence>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Dropdown for testimonial selection */}
             <div className="mt-6 relative">
-              <button
+              <motion.button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <div className="flex items-center space-x-3">
-                  <img
-                    src={testimonials[selectedTestimonial].avatar}
-                    alt={testimonials[selectedTestimonial].name}
-                    className="w-8 h-8 rounded-full object-cover"
-                  />
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={selectedTestimonial}
+                      src={testimonials[selectedTestimonial].avatar}
+                      alt={testimonials[selectedTestimonial].name}
+                      className="w-8 h-8 rounded-full object-cover"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.8 }}
+                      transition={{ duration: 0.2 }}
+                    />
+                  </AnimatePresence>
                   <div className="text-left">
-                    <p className="font-semibold text-gray-900">
-                      {testimonials[selectedTestimonial].name}
-                    </p>
-                    <p className="text-sm text-gray-500">
-                      {testimonials[selectedTestimonial].position}
-                    </p>
+                    <AnimatePresence mode="wait">
+                      <motion.p 
+                        key={`${selectedTestimonial}-name`}
+                        className="font-semibold text-gray-900"
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 10 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {testimonials[selectedTestimonial].name}
+                      </motion.p>
+                    </AnimatePresence>
+                    <AnimatePresence mode="wait">
+                      <motion.p 
+                        key={`${selectedTestimonial}-position`}
+                        className="text-sm text-gray-500"
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 10 }}
+                        transition={{ duration: 0.2, delay: 0.05 }}
+                      >
+                        {testimonials[selectedTestimonial].position}
+                      </motion.p>
+                    </AnimatePresence>
                   </div>
                 </div>
-                <ChevronDown 
-                  className={`w-5 h-5 text-gray-400 transition-transform ${
-                    isDropdownOpen ? 'rotate-180' : ''
-                  }`} 
-                />
-              </button>
+                <motion.div
+                  animate={{ rotate: isDropdownOpen ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ChevronDown className="w-5 h-5 text-gray-400" />
+                </motion.div>
+              </motion.button>
 
               {/* Dropdown Menu */}
-              {isDropdownOpen && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg z-20">
-                  {testimonials.map((testimonial, index) => (
-                    <button
-                      key={index}
-                      onClick={() => handleTestimonialChange(index)}
-                      className="w-full px-4 py-3 flex items-center space-x-3 hover:bg-gray-50 transition-colors first:rounded-t-lg last:rounded-b-lg"
-                    >
-                      <img
-                        src={testimonial.avatar}
-                        alt={testimonial.name}
-                        className="w-8 h-8 rounded-full object-cover"
-                      />
-                      <div className="text-left">
-                        <p className="font-semibold text-gray-900">
-                          {testimonial.name}
-                        </p>
-                        <p className="text-sm text-gray-500">
-                          {testimonial.position}
-                        </p>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              )}
+              <AnimatePresence>
+                {isDropdownOpen && (
+                  <motion.div 
+                    className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg z-20"
+                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {testimonials.map((testimonial, index) => (
+                      <motion.button
+                        key={index}
+                        onClick={() => handleTestimonialChange(index)}
+                        className="w-full px-4 py-3 flex items-center space-x-3 hover:bg-gray-50 transition-colors first:rounded-t-lg last:rounded-b-lg"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.2, delay: index * 0.05 }}
+                        whileHover={{ backgroundColor: "rgb(249 250 251)", x: 5 }}
+                      >
+                        <img
+                          src={testimonial.avatar}
+                          alt={testimonial.name}
+                          className="w-8 h-8 rounded-full object-cover"
+                        />
+                        <div className="text-left">
+                          <p className="font-semibold text-gray-900">
+                            {testimonial.name}
+                          </p>
+                          <p className="text-sm text-gray-500">
+                            {testimonial.position}
+                          </p>
+                        </div>
+                      </motion.button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-
-            {/* Background decorative element */}
-          </div>
+          </motion.div>
         </div>
       </div>
-<div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-yellow-50 via-yellow-30 to-transparent rounded-tr-3xl "></div>
-    </div>
+      
+      <motion.div 
+        className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-yellow-50 via-yellow-30 to-transparent rounded-tr-3xl"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+      />
+    </motion.div>
   );
 }

@@ -142,7 +142,7 @@ export default function TruckRoutingApp() {
       <main className="">
         {/* Home */}
         <section ref={homeRef}>
-          <HeroSection/>
+          <HeroSection  handleTabChange={handleTabChange}/>
         </section>
 
         {/* About */}

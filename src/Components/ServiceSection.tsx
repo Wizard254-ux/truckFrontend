@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 
 const ServicesSection = () => {
   const services = [
@@ -27,64 +28,225 @@ const ServicesSection = () => {
     }
   ];
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const gridVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50,
+      scale: 0.9
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const iconVariants = {
+    hidden: { 
+      opacity: 0,
+      scale: 0
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+        delay: 0.2
+      }
+    }
+  };
+
+  const decorativeVariants = {
+    hidden: { 
+      opacity: 0,
+      scale: 0
+    },
+    visible: {
+      opacity: 0.8,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        delay: 0.4
+      }
+    }
+  };
+
+  const dotsVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        staggerChildren: 0.1,
+        delayChildren: 0.8
+      }
+    }
+  };
+
+  const dotVariants = {
+    hidden: { opacity: 0, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <div className="bg-gray-50 py-12 sm:py-16 lg:py-20 px-3 sm:px-4 lg:px-8">
+    <motion.div 
+      className="bg-gray-50 py-12 sm:py-16 lg:py-20 px-3 sm:px-4 lg:px-8"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <p className="text-gray-600 text-xs sm:text-sm font-medium mb-2 tracking-wide">
+        <motion.div 
+          className="text-center mb-12 sm:mb-16"
+          variants={headerVariants}
+        >
+          <motion.p 
+            className="text-gray-600 text-xs sm:text-sm font-medium mb-2 tracking-wide"
+            variants={headerVariants}
+          >
             Smart Fleet Management
-          </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 px-4" 
-              style={{ fontFamily: 'Volkhov, serif' }}>
+          </motion.p>
+          <motion.h2 
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 px-4" 
+            style={{ fontFamily: 'Volkhov, serif' }}
+            variants={headerVariants}
+          >
             We Offer Best Services
-          </h2>
-        </div>
+          </motion.h2>
+        </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <motion.div 
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+          variants={gridVariants}
+        >
           {services.map((service, index) => (
-            <div 
+            <motion.div 
               key={service.id} 
               style={{ fontFamily: 'Poppins, sans-serif' }}
-              className="relative bg-white flex justify-center items-center flex-col rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-shadow duration-300"
+              className="relative bg-white flex justify-center items-center flex-col rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-sm transition-shadow duration-300"
+              variants={cardVariants}
             >
               {/* Orange decorative element for first and last items */}
               {(index === 0 || index === 3) && (
-                <div className="absolute -bottom-3 sm:-bottom-4 -right-3 sm:-right-4 w-12 h-12 sm:w-16 sm:h-16 bg-orange-400 rounded-tl-2xl sm:rounded-tl-3xl rounded-br-xl sm:rounded-br-2xl opacity-80"></div>
+                <motion.div 
+                  className="absolute -bottom-3 sm:-bottom-4 -right-3 sm:-right-4 w-12 h-12 sm:w-16 sm:h-16 bg-orange-400 rounded-tl-2xl sm:rounded-tl-3xl rounded-br-xl sm:rounded-br-2xl opacity-80"
+                  variants={decorativeVariants}
+                />
               )}
               
               {/* Icon placeholder */}
-              <div className="mb-4 sm:mb-6">
+              <motion.div 
+                className="mb-4 sm:mb-6"
+                variants={iconVariants}
+              >
                 <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-lg flex items-center justify-center">
-                    <img src={service.iconPlaceholder} alt="" className='w-full h-full object-contain'/>
+                  <img src={service.iconPlaceholder} alt="" className='w-full h-full object-contain'/>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Content */}
-              <div className="space-y-3 sm:space-y-4 text-center">
-                <h3 style={{ fontFamily: 'Poppins, sans-serif' }} 
-                    className="text-base sm:text-lg lg:text-xl font-semibold text-gray-900 leading-tight">
+              <motion.div 
+                className="space-y-3 sm:space-y-4 text-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <motion.h3 
+                  style={{ fontFamily: 'Poppins, sans-serif' }} 
+                  className="text-base sm:text-lg lg:text-xl font-semibold text-gray-900 leading-tight"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
                   {service.title}
-                </h3>
-                <p style={{ fontFamily: 'Poppins, sans-serif', width: '28ch' }} 
-                   
-                   className="text-gray-600 text-xs sm:text-sm leading-relaxed px-2">
+                </motion.h3>
+                <motion.p 
+                  style={{ fontFamily: 'Poppins, sans-serif', width: '28ch' }} 
+                  className="text-gray-600 text-xs sm:text-sm leading-relaxed px-2"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                >
                   {service.description}
-                </p>
-              </div>
-            </div>
+                </motion.p>
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Bottom decorative dots */}
-        <div className="flex justify-center mt-12 sm:mt-16 space-x-2">
-          <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-          <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-          <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-        </div>
+        <motion.div 
+          className="flex justify-center mt-12 sm:mt-16 space-x-2"
+          variants={dotsVariants}
+        >
+          <motion.div 
+            className="w-2 h-2 bg-orange-400 rounded-full"
+            variants={dotVariants}
+          />
+          <motion.div 
+            className="w-2 h-2 bg-gray-300 rounded-full"
+            variants={dotVariants}
+          />
+          <motion.div 
+            className="w-2 h-2 bg-gray-300 rounded-full"
+            variants={dotVariants}
+          />
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
