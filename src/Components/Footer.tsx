@@ -62,34 +62,34 @@ export default function Footer() {
                   GIT<span className="text-blue-800">sys</span>
                 </h3>
               </div>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Book your trip in minute, get full Control for much longer.
-              </p>
+           <p className="text-gray-600 text-sm leading-relaxed">
+              Track your fleet, optimize your routes, maximize your profits.
+            </p>
             </div>
 
             {/* Company Links */}
             <div>
-              <h4 className="font-semibold text-gray-900 mb-4">Company</h4>
+              <h4 className="font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>Company</h4>
               <ul className="space-y-2">
-                <li><button className="text-gray-600 hover:text-gray-900 text-sm text-left">About</button></li>
-                <li><button className="text-gray-600 hover:text-gray-900 text-sm text-left">Careers</button></li>
-                <li><button className="text-gray-600 hover:text-gray-900 text-sm text-left">Mobile</button></li>
+                <li><button className="text-gray-600 hover:text-gray-900 text-[16px] text-left">About</button></li>
+                <li><button className="text-gray-600 hover:text-gray-900 text-[16px] text-left">Careers</button></li>
+                <li><button className="text-gray-600 hover:text-gray-900 text-[16px] text-left">Mobile</button></li>
               </ul>
             </div>
 
             {/* Contact Links */}
             <div>
-              <h4 className="font-semibold text-gray-900 mb-4">Contact</h4>
+              <h4 className="font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>Contact</h4>
               <ul className="space-y-2">
-                <li><button className="text-gray-600 hover:text-gray-900 text-sm text-left">Help/FAQ</button></li>
-                <li><button className="text-gray-600 hover:text-gray-900 text-sm text-left">Press</button></li>
-                <li><button className="text-gray-600 hover:text-gray-900 text-sm text-left">Affiliates</button></li>
+                <li><button className="text-gray-600 hover:text-gray-900 text-[16px] text-left">Help/FAQ</button></li>
+                <li><button className="text-gray-600 hover:text-gray-900 text-[16px] text-left">Press</button></li>
+                <li><button className="text-gray-600 hover:text-gray-900 text-[16px] text-left">Affiliates</button></li>
               </ul>
             </div>
 
             {/* More Links and Social/Apps */}
             <div>
-              <h4 className="font-semibold text-gray-900 mb-4">More</h4>
+              <h4 className="font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>More</h4>
               <ul className="space-y-2 mb-6">
                 <li><button className="text-gray-600 hover:text-gray-900 text-sm text-left">Charges</button></li>
               </ul>
@@ -109,7 +109,7 @@ export default function Footer() {
 
               {/* App Download */}
               <div>
-                <p className="text-gray-600 text-sm mb-2">Discover our app</p>
+                <p className="text-gray-600 text-sm mb-2 font-[500px]" style={{ fontFamily: 'Poppins, sans-serif' }} >Discover our app</p>
                 <div className="flex space-x-2">
                   <button className="bg-black text-white px-3 py-1 rounded text-xs flex items-center space-x-1 hover:bg-gray-800">
                     <img src="/googlePlay.png" alt="" />

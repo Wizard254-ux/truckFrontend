@@ -45,7 +45,7 @@ export default function TestimonialsSection() {
               TESTIMONIALS
             </p>
            <h2
-            className="text-[50px] font-bold text-gray-900 leading-[100%] tracking-normal mb-8"
+            className="md:text-[50px] text-[28px] font-bold text-gray-900 leading-[100%] tracking-normal mb-8"
             style={{ fontFamily: 'Volkhov, serif' }}
             >
             What People Say About Us.
