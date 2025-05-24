@@ -140,8 +140,12 @@ const HeroSection = ({ handleTabChange }: { handleTabChange: (tab: 'about') => v
                 variants={titleWordVariants}
               >
                 <span style={{fontFamily: 'Volkhov, serif'}}>Drive,</span>
-                <motion.div 
-                  className="absolute -bottom-2 sm:-bottom-3 left-0 w-3/6 h-2 sm:h-3 bg-[#D98B1C] rounded-sm origin-left"
+                <motion.img
+                  src="/driveLine.png"
+                    initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+                  className="absolute -bottom-1 sm:-bottom-3 left-0 w-3/6 h-2 sm:h-3 rounded-sm origin-left"
                   variants={underlineVariants}
                 />
               </motion.div>
@@ -151,8 +155,12 @@ const HeroSection = ({ handleTabChange }: { handleTabChange: (tab: 'about') => v
                 variants={titleWordVariants}
               >
                 <span style={{fontFamily: 'Volkhov, serif'}}>Track</span>
-                <motion.div 
-                  className="absolute -bottom-2 sm:-bottom-3 left-0 w-3/5 h-2 sm:h-3 bg-[#D98B1C] rounded-sm origin-left"
+                <motion.img 
+                  src="/trackLine.png"
+                    initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+                  className="absolute -bottom-1 sm:bottom-1 left-0 w-3/5 h-2 sm:h-3  rounded-sm origin-left"
                   variants={underlineVariants}
                 />
               </motion.div>
@@ -162,8 +170,12 @@ const HeroSection = ({ handleTabChange }: { handleTabChange: (tab: 'about') => v
                 variants={titleWordVariants}
               >
                 <span style={{fontFamily: 'Volkhov, serif'}}>Thrive</span>
-                <motion.div 
-                  className="absolute -bottom-2 sm:-bottom-3 left-0 w-3/4 h-2 sm:h-3 bg-[#D98B1C] rounded-sm origin-left"
+                <motion.img 
+                  src="/thriveLine.png"
+                    initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+                  className="absolute bottom-1 sm:bottom-3 left-0 w-3/4 h-2 sm:h-3  rounded-sm origin-left"
                   variants={underlineVariants}
                 />
               </motion.div>
