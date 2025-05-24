@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail } from 'lucide-react';
+import { Mail, Phone,MessageCircle } from 'lucide-react';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -78,15 +78,29 @@ export default function Footer() {
             </div>
 
             {/* Contact Links */}
-            <div>
-              <h4 className="font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>Contact</h4>
-              <ul className="space-y-2">
-                <li><button className="text-[#5E6282] hover:text-gray-900 text-[16px] text-left">Help/FAQ</button></li>
-                <li><button className="text-[#5E6282] hover:text-gray-900 text-[16px] text-left">Press</button></li>
-                <li><button className="text-[#5E6282] hover:text-gray-900 text-[16px] text-left">Affiliates</button></li>
-              </ul>
-            </div>
-
+          <div>
+            <h4 className="font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>Contact</h4>
+            <ul className="space-y-2">
+              <li>
+                <button className="text-[#5E6282] hover:text-gray-900 text-[16px] text-left flex items-center gap-2">
+                  <Mail size={16} />
+                  support@example.com
+                </button>
+              </li>
+              <li>
+                <button className="text-[#5E6282] hover:text-gray-900 text-[16px] text-left flex items-center gap-2">
+                  <Phone size={16} />
+                  +1 (555) 123-4567
+                </button>
+              </li>
+               <li>
+                <button className="text-[#5E6282] hover:text-gray-900 text-[16px] text-left flex items-center gap-2">
+                  <img src="/whatsapp.png" alt="" className='w-5 h-5'/>
+                   +1 (555) 123-4567
+                </button>
+              </li>
+            </ul>
+          </div>
             {/* More Links and Social/Apps */}
             <div>
               <h4 className="font-semibold text-[#080809] mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>More</h4>
@@ -95,16 +109,23 @@ export default function Footer() {
               </ul>
               
               {/* Social Icons */}
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-300">
-                  <span className="text-xs font-bold">f</span>
+              <div className="flex items-center space-x-3 mb-2">
+                <div className="w-11 h-11 rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-300">
+                  <span className="text-xs font-bold">
+                    <img src="/facebook.png" alt="" />
+                  </span>
                 </div>
                 <div className="w-8 h-8 bg-pink-200 rounded-full flex items-center justify-center cursor-pointer hover:bg-pink-300">
                   <div className="w-4 h-4 bg-pink-400 rounded-full"></div>
                 </div>
                 <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-300">
                   <span className="text-xs font-bold">
-                    <img src="/twitter2.png" alt="" />
+                    <img src="/twitter1.png" alt="" className='p-1' />
+                  </span>
+                </div>
+                <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-300">
+                  <span className="text-xs font-bold">
+                    <img src="/linkedIn.png" alt="" />
                   </span>
                 </div>
               </div>

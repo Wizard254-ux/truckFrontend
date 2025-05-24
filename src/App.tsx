@@ -13,7 +13,7 @@ import HeroSection from './Components/HeroSection'
 // const ServicesSection = () => <div className="h-screen bg-yellow-100 flex items-center justify-center"><h2 className="text-4xl">Tracking Section</h2></div>;
 // const FinancialServicesSection = () => <div className="h-screen bg-purple-100 flex items-center justify-center"><h2 className="text-4xl">Financial Services</h2></div>;
 // const Testimonials = () => <div className="h-screen bg-pink-100 flex items-center justify-center"><h2 className="text-4xl">Testimonials</h2></div>;
-// const Footer = () => <div className="h-64 bg-gray-800 flex items-center justify-center"><h2 className="text-4xl text-white">Footer / Partners</h2></div>;
+// const Footer = () => <div className="h-64 bg-gray-800 flex items-center justify-center"><h2 className="text-4xl text-white">Footer / Contacts</h2></div>;
 
 export default function TruckRoutingApp() {
   const [activeTab, setActiveTab] = useState('home');
@@ -24,9 +24,9 @@ export default function TruckRoutingApp() {
   const trackingRef = useRef<HTMLElement>(null);
   const budgetsRef = useRef<HTMLElement>(null);
   const testimonialsRef = useRef<HTMLElement>(null);
-  const partnersRef = useRef<HTMLElement>(null);
+  const ContactsRef = useRef<HTMLElement>(null);
   
-  const handleTabChange = (tab: 'home' | 'about' | 'tracking' | 'budgets' | 'testimonials' | 'partners') => {
+  const handleTabChange = (tab: 'home' | 'about' | 'tracking' | 'budgets' | 'testimonials' | 'Contacts') => {
     setActiveTab(tab);
 
     if (tab === 'home') {
@@ -45,7 +45,7 @@ export default function TruckRoutingApp() {
       tracking: trackingRef,
       budgets: budgetsRef,
       testimonials: testimonialsRef,
-      partners: partnersRef
+      Contacts: ContactsRef
     };
 
     
@@ -71,9 +71,9 @@ export default function TruckRoutingApp() {
           <nav className="flex justify-center gap-1 sm:gap-4">
             <button 
               onClick={() => handleTabChange('home')}
-              className={`w-[55px] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
+              className={`w-[55px] text-[#181E4B] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
                 activeTab === 'home' 
-                  ? 'bg-gray-100 border-gray-300 border-[2px] font-medium' 
+                  ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
                   : 'hover:bg-gray-50 border-transparent'
               }`}
             >
@@ -82,9 +82,9 @@ export default function TruckRoutingApp() {
 
             <button 
               onClick={() => handleTabChange('about')}
-              className={`w-[55px] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
+              className={`w-[55px] text-[#181E4B] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
                 activeTab === 'about' 
-                  ? 'bg-gray-100 border-gray-300 font-medium' 
+                  ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
                   : 'hover:bg-gray-50 border-transparent'
               }`}
             >
@@ -93,9 +93,9 @@ export default function TruckRoutingApp() {
             
             <button 
               onClick={() => handleTabChange('tracking')}
-              className={`w-[55px] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
+              className={`w-[55px] text-[#181E4B] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
                 activeTab === 'tracking' 
-                  ? 'bg-gray-100 border-gray-300 font-medium' 
+                  ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
                   : 'hover:bg-gray-50 border-transparent'
               }`}
             >
@@ -104,9 +104,9 @@ export default function TruckRoutingApp() {
 
             <button 
               onClick={() => handleTabChange('budgets')}
-              className={`w-[55px] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
+              className={`w-[55px] text-[#181E4B] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
                 activeTab === 'budgets' 
-                  ? 'bg-gray-100 border-gray-300 font-medium' 
+                  ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
                   : 'hover:bg-gray-50 border-transparent'
               }`}
             >
@@ -115,9 +115,9 @@ export default function TruckRoutingApp() {
             
             <button 
               onClick={() => handleTabChange('testimonials')}
-              className={`w-[57px] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
+              className={`w-[57px] text-[#181E4B] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
                 activeTab === 'testimonials' 
-                  ? 'bg-gray-100 border-gray-300 font-medium' 
+                  ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
                   : 'hover:bg-gray-50 border-transparent'
               }`}
             >
@@ -125,14 +125,14 @@ export default function TruckRoutingApp() {
             </button>
 
             <button 
-              onClick={() => handleTabChange('partners')}
-              className={`w-[55px] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
-                activeTab === 'partners' 
-                  ? 'bg-gray-100 border-gray-300 font-medium' 
+              onClick={() => handleTabChange('Contacts')}
+              className={`w-[55px] text-[#181E4B] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
+                activeTab === 'Contacts' 
+                  ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
                   : 'hover:bg-gray-50 border-transparent'
               }`}
             >
-              Partners
+              Contacts
             </button>
           </nav>
         </div>
@@ -166,8 +166,8 @@ export default function TruckRoutingApp() {
         </section>
       </main>
       
-      {/* Partners */}
-      <section ref={partnersRef}>
+      {/* Contacts */}
+      <section ref={ContactsRef}>
         <Footer/>
       </section>
     </div>
