@@ -153,13 +153,13 @@ const ServicesSection = () => {
           variants={headerVariants}
         >
           <motion.p 
-            className="text-gray-600 text-xs sm:text-sm font-medium mb-2 tracking-wide"
+            className="text-[#5E6282] text-xs sm:text-sm font-medium mb-2 tracking-wide"
             variants={headerVariants}
           >
             Smart Fleet Management
           </motion.p>
           <motion.h2 
-            className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 px-4" 
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#14183E] px-4" 
             style={{ fontFamily: 'Volkhov, serif' }}
             variants={headerVariants}
           >
@@ -182,7 +182,7 @@ const ServicesSection = () => {
               {/* Orange decorative element for first and last items */}
               {(index === 0 || index === 3) && (
                 <motion.div 
-                  className="absolute -bottom-3 sm:-bottom-4 -right-3 sm:-right-4 w-12 h-12 sm:w-16 sm:h-16 bg-orange-400 rounded-tl-2xl sm:rounded-tl-3xl rounded-br-xl sm:rounded-br-2xl opacity-80"
+                  className="absolute -bottom-3 sm:-bottom-4 -right-3 sm:-right-4 w-12 h-12 sm:w-16 sm:h-16 bg-[#D98B1C] rounded-tl-2xl sm:rounded-tl-3xl rounded-br-xl sm:rounded-br-2xl opacity-80"
                   variants={decorativeVariants}
                 />
               )}
@@ -206,7 +206,7 @@ const ServicesSection = () => {
               >
                 <motion.h3 
                   style={{ fontFamily: 'Poppins, sans-serif' }} 
-                  className="text-base sm:text-lg lg:text-xl font-semibold text-gray-900 leading-tight"
+                  className="text-base sm:text-lg lg:text-xl font-semibold text-[#1E1D4C] leading-tight"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
@@ -215,7 +215,7 @@ const ServicesSection = () => {
                 </motion.h3>
                 <motion.p 
                   style={{ fontFamily: 'Poppins, sans-serif', width: '28ch' }} 
-                  className="text-gray-600 text-xs sm:text-sm leading-relaxed px-2"
+                  className="text-[#5E6282] text-xs sm:text-sm leading-relaxed px-2"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
@@ -233,7 +233,7 @@ const ServicesSection = () => {
           variants={dotsVariants}
         >
           <motion.div 
-            className="w-2 h-2 bg-orange-400 rounded-full"
+            className="w-2 h-2 bg-[#D98B1C] rounded-full"
             variants={dotVariants}
           />
           <motion.div 

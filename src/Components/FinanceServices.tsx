@@ -123,13 +123,13 @@ export default function FinancialServicesSection() {
           variants={headerVariants}
         >
           <motion.p 
-            className="text-gray-500 text-xs sm:text-sm font-medium tracking-wide uppercase mb-2 sm:mb-4"
+            className="text-[#5E6282] text-xs sm:text-sm font-medium tracking-wide uppercase mb-2 sm:mb-4"
             variants={headerVariants}
           >
-            Financially Thinking
+            Financially Thriving
           </motion.p>
           <motion.h2 
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900" 
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#14183E]" 
             style={{fontFamily: 'Volkhov, serif'}}
             variants={headerVariants}
           >
@@ -164,7 +164,7 @@ export default function FinancialServicesSection() {
               
               {/* Title */}
               <motion.h3 
-                className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-900 mb-2 sm:mb-4 px-2" 
+                className="text-lg sm:text-xl lg:text-2xl font-semibold text-[#181E4B] mb-2 sm:mb-4 px-2" 
                 style={{fontFamily: 'Volkhov, serif'}}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -181,7 +181,7 @@ export default function FinancialServicesSection() {
                   maxWidth: '45ch',
                   margin: '0 auto',
                 }} 
-                className="text-gray-600 leading-relaxed text-xs sm:text-sm lg:text-[14px] px-2"
+                className="text-[#5E6282] leading-relaxed text-xs sm:text-sm lg:text-[14px] px-2"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}

@@ -16,17 +16,17 @@ export default function Footer() {
       <div className="bg-orange-50 rounded-t-lg px-8 py-12 relative">
         {/* Check icon in top right */}
         <div className="absolute top-4 right-4">
-          <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
+          <div className="w-10 h-10 bg-[#D98B1C] rounded-full flex items-center justify-center">
             <img src="/plane.png" alt="" />
           </div>
         </div>
 
         <div className="max-w-2xl mx-auto text-center">
        <span
-        className="text-[27px] font-semibold text-gray-700 leading-[54px] tracking-normal mb-8 text-center"
+        className="text-[27px] font-semibold text-[#5E6282] leading-[54px] tracking-normal mb-8 text-center"
         style={{ fontFamily: 'Poppins, sans-serif' }}
         >
-        Subscribe to get information, latest news and other interesting offers about Jadoo
+        Subscribe to get information, latest news and other interesting offers about Gitsys
         </span>
 
 
@@ -38,12 +38,12 @@ export default function Footer() {
                 placeholder="Your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D98B1C] focus:border-transparent"
               />
             </div>
             <button
               onClick={handleSubscribe}
-              className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              className="bg-[#D98B1C] hover:bg-[#cb882a] text-white px-6 py-3 rounded-lg font-medium transition-colors"
             >
               Subscribe
             </button>
@@ -58,11 +58,11 @@ export default function Footer() {
             {/* Logo and Description */}
             <div className="md:col-span-1">
               <div className="mb-4">
-                <h3 className="text-2xl font-bold text-gray-900">
-                  GIT<span className="text-blue-800">sys</span>
+                <h3 className="text-2xl font-bold text-[#181E4B]">
+                  GIT<span className="text-[#181E4B]">sys</span>
                 </h3>
               </div>
-           <p className="text-gray-600 text-sm leading-relaxed">
+           <p className="text-[#5E6282] text-sm leading-relaxed"  style={{ fontFamily: 'Poppins, sans-serif' }}>
               Track your fleet, optimize your routes, maximize your profits.
             </p>
             </div>
@@ -71,9 +71,9 @@ export default function Footer() {
             <div>
               <h4 className="font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>Company</h4>
               <ul className="space-y-2">
-                <li><button className="text-gray-600 hover:text-gray-900 text-[16px] text-left">About</button></li>
-                <li><button className="text-gray-600 hover:text-gray-900 text-[16px] text-left">Careers</button></li>
-                <li><button className="text-gray-600 hover:text-gray-900 text-[16px] text-left">Mobile</button></li>
+                <li><button className="text-[#5E6282] hover:text-gray-900 text-[16px] text-left">About</button></li>
+                <li><button className="text-[#5E6282] hover:text-gray-900 text-[16px] text-left">Careers</button></li>
+                <li><button className="text-[#5E6282] hover:text-gray-900 text-[16px] text-left">Mobile</button></li>
               </ul>
             </div>
 
@@ -81,17 +81,17 @@ export default function Footer() {
             <div>
               <h4 className="font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>Contact</h4>
               <ul className="space-y-2">
-                <li><button className="text-gray-600 hover:text-gray-900 text-[16px] text-left">Help/FAQ</button></li>
-                <li><button className="text-gray-600 hover:text-gray-900 text-[16px] text-left">Press</button></li>
-                <li><button className="text-gray-600 hover:text-gray-900 text-[16px] text-left">Affiliates</button></li>
+                <li><button className="text-[#5E6282] hover:text-gray-900 text-[16px] text-left">Help/FAQ</button></li>
+                <li><button className="text-[#5E6282] hover:text-gray-900 text-[16px] text-left">Press</button></li>
+                <li><button className="text-[#5E6282] hover:text-gray-900 text-[16px] text-left">Affiliates</button></li>
               </ul>
             </div>
 
             {/* More Links and Social/Apps */}
             <div>
-              <h4 className="font-semibold text-gray-900 mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>More</h4>
+              <h4 className="font-semibold text-[#080809] mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>More</h4>
               <ul className="space-y-2 mb-6">
-                <li><button className="text-gray-600 hover:text-gray-900 text-sm text-left">Charges</button></li>
+                <li><button className="text-[#080809] hover:text-gray-900 text-sm text-left">Charges</button></li>
               </ul>
               
               {/* Social Icons */}
@@ -103,13 +103,15 @@ export default function Footer() {
                   <div className="w-4 h-4 bg-pink-400 rounded-full"></div>
                 </div>
                 <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-300">
-                  <span className="text-xs font-bold">t</span>
+                  <span className="text-xs font-bold">
+                    <img src="/twitter2.png" alt="" />
+                  </span>
                 </div>
               </div>
 
               {/* App Download */}
               <div>
-                <p className="text-gray-600 text-sm mb-2 font-[500px]" style={{ fontFamily: 'Poppins, sans-serif' }} >Discover our app</p>
+                <p className="text-[#5E6282] text-sm mb-2 font-[500px]" style={{ fontFamily: 'Poppins, sans-serif' }} >Discover our app</p>
                 <div className="flex space-x-2">
                   <button className="bg-black text-white px-3 py-1 rounded text-xs flex items-center space-x-1 hover:bg-gray-800">
                     <img src="/googlePlay.png" alt="" />

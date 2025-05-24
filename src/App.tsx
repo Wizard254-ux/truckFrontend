@@ -64,8 +64,8 @@ export default function TruckRoutingApp() {
       <header className="px-4 md:py-6 py-4 sticky top-0 z-50 bg-white shadow-sm">
         <div className="max-w-7xl flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center md:mb-0">
-            <h1 className="md:text-3xl text-[24px] font-bold text-navy-900">GIT<span className="text-blue-900">sys.</span></h1>
-            <div className="h-3 w-3 bg-yellow-500 rounded-full ml-1 mb-2"></div>
+            <h1 className="md:text-3xl text-[24px] font-bold text-[#181E4B]">GIT<span className="text-[#181E4B]">sys.</span></h1>
+            <div className="h-3 w-3 bg-[#D98B1C] rounded-full ml-1 mb-2"></div>
           </div>
           
           <nav className="flex justify-center gap-1 sm:gap-4">

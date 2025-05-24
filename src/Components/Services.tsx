@@ -66,7 +66,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, bgC
         transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
       >
         <motion.h3 
-          className="font-semibold text-sm sm:text-base lg:text-lg text-navy-900 mb-1 sm:mb-2" 
+          className="font-semibold text-sm sm:text-base lg:text-lg text-[#5E6282] mb-1 sm:mb-2" 
           style={{ fontFamily: 'Poppins, sans-serif' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -75,7 +75,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, bgC
           {title}
         </motion.h3>
         <motion.p 
-          className="text-gray-600 text-xs sm:text-sm lg:text-base leading-relaxed" 
+          className="text-[#5E6282] text-xs sm:text-sm lg:text-base leading-relaxed" 
           style={{ fontFamily: 'Poppins, sans-serif' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -202,7 +202,7 @@ const Services: React.FC = () => {
             className="mb-6 sm:mb-8 block md:hidden"
             variants={titleVariants}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-bold text-navy-900 mb-4 leading-tight" 
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[45px] font-bold text-[#14183E] mb-4 leading-tight" 
                 style={{ fontFamily: 'Volkhov, serif' }}>
               Track Your Trucks<br />Rides With Our App
             </h2>

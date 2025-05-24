@@ -128,20 +128,20 @@ const HeroSection = ({ handleTabChange }: { handleTabChange: (tab: 'about') => v
             variants={leftContentVariants}
           >
             <motion.div 
-              className="text-orange-500 font-bold mb-1 text-sm sm:text-xl tracking-wide"
+              className="text-[#D98B1C] font-bold mb-1 text-sm sm:text-xl tracking-wide"
               variants={titleWordVariants}
             >
               BEST ROUTING PARTNER FOR TRUCK DRIVERS
             </motion.div>
             
-            <div className="text-3xl sm:text-5xl lg:text-6xl font-bold text-navy-900 leading-tight flex flex-col space-y-0">
+            <div className="text-3xl sm:text-5xl lg:text-6xl font-bold text-[#181E4B] leading-tight flex flex-col space-y-0">
               <motion.div 
                 className="relative inline-block"
                 variants={titleWordVariants}
               >
                 <span style={{fontFamily: 'Volkhov, serif'}}>Drive,</span>
                 <motion.div 
-                  className="absolute -bottom-2 sm:-bottom-3 left-0 w-3/6 h-2 sm:h-3 bg-yellow-500 rounded-sm origin-left"
+                  className="absolute -bottom-2 sm:-bottom-3 left-0 w-3/6 h-2 sm:h-3 bg-[#D98B1C] rounded-sm origin-left"
                   variants={underlineVariants}
                 />
               </motion.div>
@@ -152,7 +152,7 @@ const HeroSection = ({ handleTabChange }: { handleTabChange: (tab: 'about') => v
               >
                 <span style={{fontFamily: 'Volkhov, serif'}}>Track</span>
                 <motion.div 
-                  className="absolute -bottom-2 sm:-bottom-3 left-0 w-3/5 h-2 sm:h-3 bg-yellow-500 rounded-sm origin-left"
+                  className="absolute -bottom-2 sm:-bottom-3 left-0 w-3/5 h-2 sm:h-3 bg-[#D98B1C] rounded-sm origin-left"
                   variants={underlineVariants}
                 />
               </motion.div>
@@ -163,7 +163,7 @@ const HeroSection = ({ handleTabChange }: { handleTabChange: (tab: 'about') => v
               >
                 <span style={{fontFamily: 'Volkhov, serif'}}>Thrive</span>
                 <motion.div 
-                  className="absolute -bottom-2 sm:-bottom-3 left-0 w-3/4 h-2 sm:h-3 bg-yellow-500 rounded-sm origin-left"
+                  className="absolute -bottom-2 sm:-bottom-3 left-0 w-3/4 h-2 sm:h-3 bg-[#D98B1C] rounded-sm origin-left"
                   variants={underlineVariants}
                 />
               </motion.div>
@@ -182,7 +182,7 @@ const HeroSection = ({ handleTabChange }: { handleTabChange: (tab: 'about') => v
             >
               <motion.button 
                 onClick={() => handleTabChange('about')}  
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-yellow-500 text-white font-medium rounded-md hover:bg-yellow-600 transition-colors shadow-lg text-sm sm:text-base"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-[#D98B1C] text-white font-medium rounded-md hover:bg-yellow-600 transition-colors shadow-lg text-sm sm:text-base"
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"

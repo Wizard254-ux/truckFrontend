@@ -51,7 +51,7 @@ export default function TestimonialsSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <motion.p 
-              className="text-gray-500 text-sm font-medium tracking-wide uppercase mb-4"
+              className="text-[#5E6282] text-sm font-medium tracking-wide uppercase mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -59,7 +59,7 @@ export default function TestimonialsSection() {
               TESTIMONIALS
             </motion.p>
             <motion.h2
-              className="md:text-[50px] text-[28px] font-bold text-gray-900 leading-[100%] tracking-normal mb-8"
+              className="md:text-[50px] text-[28px] font-bold text-[#14183E] leading-[100%] tracking-normal mb-8"
               style={{ fontFamily: 'Volkhov, serif' }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -120,7 +120,7 @@ export default function TestimonialsSection() {
                   <AnimatePresence mode="wait">
                     <motion.p 
                       key={selectedTestimonial}
-                      className="text-gray-700 leading-relaxed mb-4"
+                      className="text-[#5E6282] leading-relaxed mb-4"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -20 }}
@@ -158,7 +158,7 @@ export default function TestimonialsSection() {
                     <AnimatePresence mode="wait">
                       <motion.p 
                         key={`${selectedTestimonial}-name`}
-                        className="font-semibold text-gray-900"
+                        className="font-semibold text-[#5E6282]"
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: 10 }}
@@ -170,7 +170,7 @@ export default function TestimonialsSection() {
                     <AnimatePresence mode="wait">
                       <motion.p 
                         key={`${selectedTestimonial}-position`}
-                        className="text-sm text-gray-500"
+                        className="text-sm text-[#5E6282"
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: 10 }}
@@ -215,10 +215,10 @@ export default function TestimonialsSection() {
                           className="w-8 h-8 rounded-full object-cover"
                         />
                         <div className="text-left">
-                          <p className="font-semibold text-gray-900">
+                          <p className="font-semibold text-[#5E6282]">
                             {testimonial.name}
                           </p>
-                          <p className="text-sm text-gray-500">
+                          <p className="text-sm text-[#5E6282]">
                             {testimonial.position}
                           </p>
                         </div>
