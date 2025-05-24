@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone,MessageCircle } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
