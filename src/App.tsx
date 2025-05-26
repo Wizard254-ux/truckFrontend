@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './index.css';
 import Services from './Components/Services'
 import ServicesSection from './Components/ServiceSection'
@@ -6,14 +6,6 @@ import FinancialServicesSection from './Components/FinanceServices'
 import Testimonials from './Components/Testimonials'
 import Footer from './Components/Footer';
 import HeroSection from './Components/HeroSection'
-
-// Mock components for demonstration
-// const HeroSection = () => <div className="h-screen bg-blue-100 flex items-center justify-center"><h2 className="text-4xl">Hero Section</h2></div>;
-// const Services = () => <div className="h-screen bg-green-100 flex items-center justify-center"><h2 className="text-4xl">About Section</h2></div>;
-// const ServicesSection = () => <div className="h-screen bg-yellow-100 flex items-center justify-center"><h2 className="text-4xl">Tracking Section</h2></div>;
-// const FinancialServicesSection = () => <div className="h-screen bg-purple-100 flex items-center justify-center"><h2 className="text-4xl">Financial Services</h2></div>;
-// const Testimonials = () => <div className="h-screen bg-pink-100 flex items-center justify-center"><h2 className="text-4xl">Testimonials</h2></div>;
-// const Footer = () => <div className="h-64 bg-gray-800 flex items-center justify-center"><h2 className="text-4xl text-white">Footer / Contacts</h2></div>;
 
 export default function TruckRoutingApp() {
   const [activeTab, setActiveTab] = useState('home');
@@ -26,6 +18,46 @@ export default function TruckRoutingApp() {
   const testimonialsRef = useRef<HTMLElement>(null);
   const ContactsRef = useRef<HTMLElement>(null);
   
+  // Use effect to handle scroll events
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = [
+        { name: 'home', ref: homeRef },
+        { name: 'about', ref: aboutRef },
+        { name: 'tracking', ref: trackingRef },
+        { name: 'budgets', ref: budgetsRef },
+        { name: 'testimonials', ref: testimonialsRef },
+        { name: 'Contacts', ref: ContactsRef }
+      ];
+      
+      const scrollPosition = window.scrollY + 100; // Add offset for header
+      
+      // Find which section is currently in view
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section.ref.current) {
+          const sectionTop = section.ref.current.offsetTop;
+          
+          if (scrollPosition >= sectionTop) {
+            setActiveTab(section.name as any);
+            break;
+          }
+        }
+      }
+    };
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+    
+    // Call once to set initial state
+    handleScroll();
+    
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
   const handleTabChange = (tab: 'home' | 'about' | 'tracking' | 'budgets' | 'testimonials' | 'Contacts') => {
     setActiveTab(tab);
 
@@ -37,7 +69,6 @@ export default function TruckRoutingApp() {
       return;
     }
     
-    
     // Scroll to the corresponding section
     const refs = {
       home: homeRef,
@@ -48,7 +79,6 @@ export default function TruckRoutingApp() {
       Contacts: ContactsRef
     };
 
-    
     const targetRef = refs[tab];
     if (targetRef && targetRef.current) {
       targetRef.current.scrollIntoView({ 
@@ -75,73 +105,73 @@ export default function TruckRoutingApp() {
             </div>
           </div>
           
-          <nav className="flex justify-center gap-1 sm:gap-4">
-            <button 
-              onClick={() => handleTabChange('home')}
-              className={`w-[55px] text-[#181E4B] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
-                activeTab === 'home' 
-                  ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
-                  : 'hover:bg-gray-50 border-transparent'
-              }`}
-            >
-              Home
-            </button>
+      <nav className="flex justify-center gap-1 sm:gap-4">
+  <button 
+    onClick={() => handleTabChange('home')}
+    className={`w-[55px] text-[#181E4B]  sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
+      activeTab === 'home' 
+        ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
+        : 'hover:bg-gray-50 bg-gray-100 border-transparent hover:shadow-sm font-normal'
+    }`}
+  >
+    Home
+  </button>
 
-            <button 
-              onClick={() => handleTabChange('about')}
-              className={`w-[55px] text-[#181E4B] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
-                activeTab === 'about' 
-                  ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
-                  : 'hover:bg-gray-50 border-transparent'
-              }`}
-            >
-              About
-            </button>
-            
-            <button 
-              onClick={() => handleTabChange('tracking')}
-              className={`w-[55px] text-[#181E4B] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
-                activeTab === 'tracking' 
-                  ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
-                  : 'hover:bg-gray-50 border-transparent'
-              }`}
-            >
-              Tracking
-            </button>
+  <button 
+    onClick={() => handleTabChange('about')}
+    className={`w-[55px] text-[#181E4B]  sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
+      activeTab === 'about' 
+        ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
+        : 'hover:bg-gray-50 bg-gray-100 border-transparent hover:shadow-sm font-normal'
+    }`}
+  >
+    About
+  </button>
+  
+  <button 
+    onClick={() => handleTabChange('tracking')}
+    className={`w-[55px] text-[#181E4B] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
+      activeTab === 'tracking' 
+        ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
+        : 'hover:bg-gray-50 bg-gray-100 border-transparent hover:shadow-sm font-normal'
+    }`}
+  >
+    Tracking
+  </button>
 
-            <button 
-              onClick={() => handleTabChange('budgets')}
-              className={`w-[55px] text-[#181E4B] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
-                activeTab === 'budgets' 
-                  ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
-                  : 'hover:bg-gray-50 border-transparent'
-              }`}
-            >
-              Budgets
-            </button>
-            
-            <button 
-              onClick={() => handleTabChange('testimonials')}
-              className={`w-[57px] text-[#181E4B] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
-                activeTab === 'testimonials' 
-                  ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
-                  : 'hover:bg-gray-50 border-transparent'
-              }`}
-            >
-              Testimonial
-            </button>
+  <button 
+    onClick={() => handleTabChange('budgets')}
+    className={`w-[55px] text-[#181E4B] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
+      activeTab === 'budgets' 
+        ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
+        : 'hover:bg-gray-50 bg-gray-100 border-transparent hover:shadow-sm font-normal'
+    }`}
+  >
+    Budgets
+  </button>
+  
+  <button 
+    onClick={() => handleTabChange('testimonials')}
+    className={`w-[57px] text-[#181E4B] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
+      activeTab === 'testimonials' 
+        ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
+        : 'hover:bg-gray-50 bg-gray-100 border-transparent hover:shadow-sm font-normal'
+    }`}
+  >
+    Testimonial
+  </button>
 
-            <button 
-              onClick={() => handleTabChange('Contacts')}
-              className={`w-[55px] text-[#181E4B] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
-                activeTab === 'Contacts' 
-                  ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
-                  : 'hover:bg-gray-50 border-transparent'
-              }`}
-            >
-              Contacts
-            </button>
-          </nav>
+  <button 
+    onClick={() => handleTabChange('Contacts')}
+    className={`w-[55px] text-[#181E4B] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
+      activeTab === 'Contacts' 
+        ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
+        : 'hover:bg-gray-50 bg-gray-100 border-transparent hover:shadow-sm font-normal'
+    }`}
+  >
+    Contacts
+  </button>
+</nav>
         </div>
       </header>
       
