@@ -105,13 +105,13 @@ export default function TruckRoutingApp() {
             </div>
           </div>
           
-      <nav className="flex justify-center gap-1 sm:gap-4">
+<nav className="flex justify-center items-center bg-gray-50 rounded-full p-1 shadow-inner mt-1 md:mt-0 border border-gray-200 gap-1 sm:gap-2">
   <button 
     onClick={() => handleTabChange('home')}
-    className={`w-[55px] text-[#181E4B]  sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
+    className={`w-[55px] sm:w-auto sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ease-in-out flex-shrink-0 ${
       activeTab === 'home' 
-        ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
-        : 'hover:bg-gray-50 bg-gray-100 border-transparent hover:shadow-sm font-normal'
+        ? 'bg-[#181E4B] text-white shadow-lg transform scale-105' 
+        : 'text-[#181E4B] hover:bg-white hover:shadow-md hover:scale-102'
     }`}
   >
     Home
@@ -119,10 +119,10 @@ export default function TruckRoutingApp() {
 
   <button 
     onClick={() => handleTabChange('about')}
-    className={`w-[55px] text-[#181E4B]  sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
+    className={`w-[55px] sm:w-auto sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ease-in-out flex-shrink-0 ${
       activeTab === 'about' 
-        ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
-        : 'hover:bg-gray-50 bg-gray-100 border-transparent hover:shadow-sm font-normal'
+        ? 'bg-[#181E4B] text-white shadow-lg transform scale-105' 
+        : 'text-[#181E4B] hover:bg-white hover:shadow-md hover:scale-102'
     }`}
   >
     About
@@ -130,10 +130,10 @@ export default function TruckRoutingApp() {
   
   <button 
     onClick={() => handleTabChange('tracking')}
-    className={`w-[55px] text-[#181E4B] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
+    className={`w-[55px] sm:w-auto sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ease-in-out flex-shrink-0 ${
       activeTab === 'tracking' 
-        ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
-        : 'hover:bg-gray-50 bg-gray-100 border-transparent hover:shadow-sm font-normal'
+        ? 'bg-[#181E4B] text-white shadow-lg transform scale-105' 
+        : 'text-[#181E4B] hover:bg-white hover:shadow-md hover:scale-102'
     }`}
   >
     Tracking
@@ -141,10 +141,10 @@ export default function TruckRoutingApp() {
 
   <button 
     onClick={() => handleTabChange('budgets')}
-    className={`w-[55px] text-[#181E4B] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
+    className={`w-[55px] sm:w-auto sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ease-in-out flex-shrink-0 ${
       activeTab === 'budgets' 
-        ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
-        : 'hover:bg-gray-50 bg-gray-100 border-transparent hover:shadow-sm font-normal'
+        ? 'bg-[#181E4B] text-white shadow-lg transform scale-105' 
+        : 'text-[#181E4B] hover:bg-white hover:shadow-md hover:scale-102'
     }`}
   >
     Budgets
@@ -152,10 +152,10 @@ export default function TruckRoutingApp() {
   
   <button 
     onClick={() => handleTabChange('testimonials')}
-    className={`w-[57px] text-[#181E4B] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
+    className={`w-[59px] sm:w-auto sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ease-in-out flex-shrink-0 ${
       activeTab === 'testimonials' 
-        ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
-        : 'hover:bg-gray-50 bg-gray-100 border-transparent hover:shadow-sm font-normal'
+        ? 'bg-[#181E4B] text-white shadow-lg transform scale-105' 
+        : 'text-[#181E4B] hover:bg-white hover:shadow-md hover:scale-102'
     }`}
   >
     Testimonial
@@ -163,10 +163,10 @@ export default function TruckRoutingApp() {
 
   <button 
     onClick={() => handleTabChange('Contacts')}
-    className={`w-[55px] text-[#181E4B] sm:w-[96px] h-[40px] rounded-[5px] text-xs sm:text-base transition-all border flex-shrink-0 ${
+    className={`w-[55px] sm:w-auto sm:px-4 py-2 ml-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ease-in-out flex-shrink-0 ${
       activeTab === 'Contacts' 
-        ? 'bg-gray-100 border-[#181E4B] border-[2px] font-medium' 
-        : 'hover:bg-gray-50 bg-gray-100 border-transparent hover:shadow-sm font-normal'
+        ? 'bg-[#181E4B] text-white shadow-lg transform scale-105' 
+        : 'text-[#181E4B] hover:bg-white hover:shadow-md hover:scale-102'
     }`}
   >
     Contacts
